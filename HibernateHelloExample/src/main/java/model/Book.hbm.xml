@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="bookstore" dynamic-insert="false" dynamic-update="false" mutable="true" name="model.Book" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="book">
+        <id name="bookId" type="int">
+            <column name="book_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="title" optimistic-lock="true" type="string" unique="false">
+            <column length="128" name="title" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="author" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="author" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="price" optimistic-lock="true" type="float" unique="false">
+            <column name="price" not-null="true" precision="12" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
